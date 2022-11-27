@@ -1,0 +1,116 @@
+.page-index {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  background-image: url("https://bing.img.run/rand_m.php");
+  /* background-image: url('https://bing.img.run/m.php'); */
+  background-size: cover;
+  overflow: hidden;
+}
+
+.page-input__wrap {
+  display: flex;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  width: calc(100vw - 20px);
+  height: 45px;
+  line-height: 45px;
+  font-size: 18px;
+  color: #fff;
+  margin: 0 auto;
+  margin-top: 100px;
+  align-items: center;
+}
+
+.page-input {
+  flex: 1;
+  padding: 0 5px;
+}
+
+.page-input__placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.page-input__btn {
+  border-left: 1px solid #fff;
+  padding: 0 5px;
+  position: relative;
+}
+
+.page-input__btn--loading {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: none;
+  transform: translate(-50%, -50%);
+  width: 15px;
+  height: 15px;
+  border: 5px white solid;
+  border-left-color: transparent;
+  border-right-color: #fff;
+  border-radius: 100%;
+  animation: loading1 1s infinite linear;
+}
+@keyframes loading1 {
+  from{
+    transform: translate(-50%, -50%) rotate(0deg)
+  }
+  to{
+    transform: translate(-50%, -50%) rotate(360deg)
+  }
+}
+
+
+.page-input__btn.loading .page-input__btn--text {
+  visibility: hidden;
+}
+.page-input__btn.loading .page-input__btn--loading {
+  display: block;
+}
+
+.page-image__list {
+  height: calc(100vh - 200px);
+  overflow: auto;
+  width: calc(100vw - 20px);
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: #fff;
+  background: hsla(0, 0%, 100%, 0.25) border-box;
+  box-shadow: 0 0 0 1px hsla (0, 0%, 100%, 0.3) inset, .5em 1em rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.page-image__item {
+  width: calc(50% - 5px);
+  margin-bottom: 10px;
+}
+
+.page-image__item:nth-child(2n) {
+  margin-left: 10px;
+}
+
+.page-image__item--img {
+  width: 100%;
+}
+
+
+.note__wrap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 16px;
+}
+
+.note__item {
+  white-space: nowrap;
+}
+
+.note__item--center {
+  text-align: center;
+}

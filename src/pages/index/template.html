@@ -1,0 +1,57 @@
+<view class="page-wrap page-index">
+
+    <view class="page-input__wrap">
+        <input
+        class="page-input"
+        type="text"
+        v-model="enter"
+        placeholder-class="page-input__placeholder"
+        placeholder="moonlight on the lake"
+        @confirm="handleGenImage">
+        <view
+        class="page-input__btn"
+        :class="{
+            loading: status === 'loading'
+        }"
+        @click="handleGenImage">
+            <view class="page-input__btn--text">Draw</view>
+            <view class="page-input__btn--loading"></view>
+        </view>
+    </view>
+
+    <view class="page-image__list">
+
+        <view
+        v-if="status === 'ready'"
+        class="page-image__list--tips">
+            <view class="note__wrap">
+                <view class="note__item">What image do you want to generate...</view>
+            </view>
+        </view>
+
+        <view 
+        v-if="status === 'loading'"
+        class="page-image__list--loading">
+            <view class="note__wrap">
+                <view class="note__item note__item--center">
+                    {{ awaitText }}
+                </view>
+                <view class="note__item note__item--center">
+                    up to 2 minutes...
+                </view>
+                <view class="note__item note__item--center">
+                    {{ clock }}s
+                </view>
+            </view>
+        </view>
+
+        <view
+        v-if="status === 'result'"
+        class="page-image__item"
+        v-for="item in images"
+        :key="item"
+        @click="handlePreview(item)">
+            <image class="page-image__item--img" :src="item"></image>
+        </view>
+    </view>
+</view>
