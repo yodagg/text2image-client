@@ -51,7 +51,7 @@
         v-for="item in images"
         :key="item"
         @click="handlePreview(item)">
-            <image class="page-image__item--img" :src="item"></image>
+            <image class="page-image__item--img" mode="widthFix" :src="item"></image>
         </view>
     </view>
 </view>
