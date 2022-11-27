@@ -8,8 +8,9 @@
 
 [node-craiyon](https://github.com/jozsefsallai/node-craiyon)
 
-[text2image-service](https://raw.githubusercontent.com/yodagg/text2image-service)
+[text2image-service](https://github.com/yodagg/text2image-service)
 
+[bing.img.run](https://bing.img.run/api.html)
 
 ### 使用
 ```bash
@@ -26,9 +27,9 @@ npm run build:mp-weixin
 
 ### 体验
 - 微信扫码
-![p7eU3BD](https://i.imgur.com/p7eU3BD.jpg)
+![CnPFfG2](https://i.imgur.com/CnPFfG2.jpg)
 
 ### 预览
-![KFyJXxk](https://i.imgur.com/KFyJXxk.jpg)
-![tiB9K9u](https://i.imgur.com/tiB9K9u.jpg)
-![jDjBC6x](https://i.imgur.com/jDjBC6x.jpg)
+![TE7JyUV](https://i.imgur.com/TE7JyUV.jpg)
+![QBxHdxO](https://i.imgur.com/QBxHdxO.jpg)
+![bBypDD1](https://i.imgur.com/bBypDD1.jpg)
