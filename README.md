@@ -1,4 +1,4 @@
-### 文本画图小程序
+### 文本画图
 
 可以根据用户输入文本，生成对应情景图片。
 
@@ -26,8 +26,11 @@ npm run build:mp-weixin
 
 
 ### 体验
-- 微信扫码
-![CnPFfG2](https://i.imgur.com/CnPFfG2.jpg)
+- Web
+  - https://www.wo2.me/text2image/
+
+- 微信小程序
+  - ![CnPFfG2](https://i.imgur.com/CnPFfG2.jpg)
 
 ### 预览
 ![TE7JyUV](https://i.imgur.com/TE7JyUV.jpg)
