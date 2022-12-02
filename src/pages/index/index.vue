@@ -5,7 +5,7 @@ import { onShareAppMessage, onShareTimeline } from '@dcloudio/uni-app'
 import text2image from '../../server/text2image'
 import words from '../../utils/words'
 
-const enter = ref('moonlight on the lake')
+const enter = ref('向日葵')
 const images = ref([])
 const status = ref('ready') // ready loading result
 const clock = ref(0)
