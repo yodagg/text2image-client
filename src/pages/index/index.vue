@@ -1,11 +1,12 @@
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import { onShareAppMessage, onShareTimeline } from '@dcloudio/uni-app'
+import { ref } from 'vue'
+import { onShareAppMessage, onShareTimeline, onShow } from '@dcloudio/uni-app'
+import getDefaultEnterValue from '../../utils/getDefaultEnterValue'
 import text2image from '../../server/text2image'
 import words from '../../utils/words'
 
-const enter = ref('向日葵')
+const enter = ref('')
 const images = ref([])
 const status = ref('ready') // ready loading result
 const clock = ref(0)
@@ -13,16 +14,21 @@ const awaitText = ref('')
 
 onShareAppMessage(() =>{
   return {
-    title: '文本画图',
-    path: '/pages/index/index'
+    title: '快来看看我的画',
+    path: `/pages/index/index?sharetext=${enter.value}`
   }
 })
 
 onShareTimeline(() =>{
   return {
-    title: '文本画图',
-    path: '/pages/index/index'
+    title: '快来看看我的画',
+    path: `/pages/index/index?sharetext=${enter.value}`
   }
+})
+
+onShow(() =>{
+  const sharetext = getDefaultEnterValue()
+  enter.value = sharetext
 })
 
 async function handleGenImage() {

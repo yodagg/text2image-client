@@ -36,6 +36,8 @@
   border-left: 1px solid #fff;
   padding: 0 5px;
   position: relative;
+  min-width: 80px;
+  text-align: center;
 }
 
 .page-input__btn--loading {
