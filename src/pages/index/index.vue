@@ -68,7 +68,7 @@ async function handleGenImage() {
 
 
   // 生成等待文案
-  awaitText.value = words.await()
+  awaitText.value = await words.await()
 
 
   try {

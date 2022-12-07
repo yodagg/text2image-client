@@ -1,14 +1,16 @@
+import getRemoteValue from './getRemoteValue'
 
 const words = [
-    '这应该不会花太长时间',
-    '正在尝试生成图像',
-    '请等我一会'
+    "这应该不会花太长时间",
+    "正在尝试生成图像",
+    "请等我一会"
 ]
 
 export default {
-    await() {
-        const len = words.length
+    async await() {
+        const words_await = await getRemoteValue('words_await', words)
+        const len = words_await.length
         const idx = Math.round(Math.random() * (len - 1))
-        return words[idx]
+        return words_await[idx]
     }
 }

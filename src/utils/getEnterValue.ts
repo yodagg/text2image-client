@@ -1,5 +1,5 @@
 import getCurrentPage from './getCurrentPage'
-import getAppConfig from '../server/appconfig'
+import getRemoteValue from './getRemoteValue'
 
 const defaultValue = '小狗在吃草，Q版'
 
@@ -15,11 +15,6 @@ export const getShareEnterValue = () =>{
 
 // 远程配置
 export const getConfigEnterValue = async () =>{
-    try {
-        const { data } = await getAppConfig()
-        return data.default_search_value    
-    } catch (error) {
-        return defaultValue
-    }
+    return getRemoteValue('default_search_value', defaultValue)
 }
 
