@@ -43,6 +43,16 @@ async function handleGenImage() {
   if (!value) return
 
 
+  // 记录查询关键词
+  // @ts-ignore
+  if ( typeof gtag === 'function' ) {
+    // @ts-ignore
+    gtag('event', 'text2image_search', {
+      type: 'text2image_search',
+      value,
+    })
+  }
+
   // 修改loading
   status.value = 'loading'
 
@@ -86,4 +96,5 @@ function handlePreview(item: string) {
 
 </script>
 <template src="./template.html"></template>
+
 <style src="./style.css"></style>

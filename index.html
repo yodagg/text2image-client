@@ -2,6 +2,20 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-YG10EC870P"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-YG10EC870P");
+    </script>
     <script>
       var coverSupport = 'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') ||
         CSS.supports('top: constant(a)'))
@@ -9,7 +23,7 @@
         '<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' +
         (coverSupport ? ', viewport-fit=cover' : '') + '" />')
     </script>
-    <title></title>
+    <title>文字画图</title>
     <!--preload-links-->
     <!--app-context-->
   </head>
