@@ -1,8 +1,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { onShareAppMessage, onShareTimeline, onShow } from '@dcloudio/uni-app'
-import getDefaultEnterValue from '../../utils/getDefaultEnterValue'
+import { onShareAppMessage, onShareTimeline, onReady } from '@dcloudio/uni-app'
+import { getShareEnterValue, getConfigEnterValue } from '../../utils/getEnterValue'
 import text2image from '../../server/text2image'
 import words from '../../utils/words'
 
@@ -14,21 +14,26 @@ const awaitText = ref('')
 
 onShareAppMessage(() =>{
   return {
-    title: '快来看看我的画',
+    title: '快来看看我的画吧',
     path: `/pages/index/index?sharetext=${enter.value}`
   }
 })
 
 onShareTimeline(() =>{
   return {
-    title: '快来看看我的画',
+    title: '快来看看我的画吧',
     path: `/pages/index/index?sharetext=${enter.value}`
   }
 })
 
-onShow(() =>{
-  const sharetext = getDefaultEnterValue()
-  enter.value = sharetext
+onReady(async () =>{
+  const sharetext = getShareEnterValue()
+  let value = sharetext
+
+  if ( !sharetext ) {
+    value = await getConfigEnterValue()
+  }
+  enter.value = value
 })
 
 async function handleGenImage() {
